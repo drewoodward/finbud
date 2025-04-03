@@ -1,0 +1,55 @@
+/* analytics.css */
+.analytics-container {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .analytics-header {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .analytics-section {
+    margin-bottom: 30px;
+  }
+  
+  .analytics-section h3 {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .analytics-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-size: 1.2em;
+    color: #444;
+  }
+  
+  .analytics-card h4 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    color: #007bff;
+  }
+  
+  .analytics-footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1em;
+    color: #888;
+  }
+  
+  /* Styles for charts or graphs (placeholders for now) */
+  .analytics-card p {
+    font-size: 1.1em;
+    color: #555;
+  }
+  
