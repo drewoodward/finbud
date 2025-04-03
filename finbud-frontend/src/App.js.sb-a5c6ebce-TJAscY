@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Import your components (placeholders for now)
 import Home from './Home'; // Will need to create these components if you don't have them yet
@@ -15,10 +15,10 @@ function App() {
           <h1>FinBud</h1>
         </header>
 
-        {/* Navigation using Link for client-side routing */}
+        {/* Navigation (you can use Link from react-router-dom for client-side navigation) */}
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
+          <a href="/">Home</a>
+          <a href="/about">About</a>
         </nav>
 
         {/* Routing setup */}
@@ -32,6 +32,9 @@ function App() {
 }
 
 export default App;
-       
+
+
+          
+          
 
             
