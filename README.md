@@ -2,14 +2,14 @@
 
 **Finbud** is a personal finance web application designed to give users detailed insights into their spending habits and empower them to take control of their financial future.
 
-Alongside traditional financial tracking, Finbud features an **AI-powered chatbot** that provides personalized financial advice. Whether you're paying off debt, saving for a down payment, or trying to stick to a budget, Finbud’s smart assistant is here to help.
+Alongside traditional financial tracking, Finbud features an AI-powered chatbot that provides personalized financial advice. Whether you're paying off debt, saving for a down payment, or trying to stick to a budget, Finbud’s smart assistant is here to help.
 
 ---
 
 ## 🚀 Features
 
-- 🧾 **Transaction Tracking**: Visualize your income and expenses across categories.
-- 📊 **Analytics Dashboard**: Get detailed breakdowns of your spending patterns.
+- 🧾 **Transaction Tracking**: Visualize your expenses across categories.
+- 📊 **Analytics Dashboard**: Get detailed breakdowns of your spending patterns. Key market insights and future predictions.
 - 🤖 **AI Chatbot Assistant**:
   - Personalized financial guidance
   - Custom debt repayment strategies
@@ -30,20 +30,3 @@ Alongside traditional financial tracking, Finbud features an **AI-powered chatbo
 ## 📦 Installation
 
 🚧 _Project is under active development and not yet ready to run locally._
-
-Once released, the setup instructions will look something like this:
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/finbud.git
-cd finbud
-
-# Backend setup (Spring Boot + MySQL)
-cd backend
-# configure your application.properties with MySQL credentials
-./mvnw spring-boot:run
-
-# Frontend setup (React)
-cd ../frontend
-npm install
-npm start
