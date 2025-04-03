@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 // Import your components (placeholders for now)
 import Home from './Home'; // Will need to create these components if you don't have them yet
 import About from './About'; // Will need to create these components if you don't have them yet
+import Analytics from './Analytics'; // Analytics page
 
 // The App component
 function App() {
@@ -19,12 +20,14 @@ function App() {
         <nav>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
+          <Link to="/Analytics">Analytics</Link> {/* Corrected Link to Analytics page */}
         </nav>
 
         {/* Routing setup */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/Analytics" element={<Analytics />} />
         </Routes>
       </div>
     </Router>
@@ -32,6 +35,6 @@ function App() {
 }
 
 export default App;
-       
+
 
             
