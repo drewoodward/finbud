@@ -2,12 +2,13 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-// Import your components (placeholders for now)
-import Home from './Home'; // Will need to create these components if you don't have them yet
-import About from './About'; // Will need to create these components if you don't have them yet
-import Analytics from './Analytics'; // Analytics page
-import Profile from './Profile'; //profile 
-// The App component
+// Import your components
+import Home from './Home';
+import About from './About';
+import Analytics from './Analytics';
+import Profile from './Profile';
+import Chatbot from './Chatbot'; // Import Chatbot
+
 function App() {
   return (
     <Router>
@@ -20,23 +21,25 @@ function App() {
         <nav>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-          <Link to="/Analytics">Analytics</Link> {/* Corrected Link to Analytics page */}
-          <Link to="/Profile">Profile</Link>
+          <Link to="/analytics">Analytics</Link> {/* Lowercase for consistency */}
+          <Link to="/profile">Profile</Link>
         </nav>
 
         {/* Routing setup */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/Analytics" element={<Analytics />} />
-          <Route path="/Profile" element={<Profile />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
+
+        {/* Floating Chatbot - appears on all pages */}
+        <Chatbot />
       </div>
     </Router>
   );
 }
 
 export default App;
-
 
             
