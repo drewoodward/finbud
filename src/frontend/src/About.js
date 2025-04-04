@@ -27,12 +27,12 @@ function About() {
         financial, investment, tax, or legal advice.
       </p>
       <p className="legal">
-        By using Financial Buddy, you acknowledge that all financial decisions are made at your own discretion and risk. 
+        By using FinBud, you acknowledge that all financial decisions are made at your own discretion and risk. 
         We strongly encourage users to consult with a professional financial advisor before making significant financial decisions.
       </p>
       <p className="legal">
         <strong>Data Privacy & Security:</strong> We prioritize your privacy and take security measures to protect your financial 
-        data. However, Financial Buddy is not responsible for any unauthorized access, financial losses, or inaccuracies 
+        data. However, Finbud is not responsible for any unauthorized access, financial losses, or inaccuracies 
         resulting from user input or third-party integrations.
       </p>
       <p className="legal">
