@@ -1,0 +1,50 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: ask about budget
+  steps:
+    - intent: ask_budget
+    - action: utter_what_is_budget
+
+- story: ask saving tips
+  steps:
+    - intent: ask_saving_tips
+    - action: utter_saving_tips
+
+- story: ask about 50/30/20 rule
+  steps:
+    - intent: ask_50_30_20_rule
+    - action: utter_50_30_20
+
+- story: ask how to start budgeting
+  steps:
+    - intent: ask_how_to_start
+    - action: utter_how_to_start_budgeting

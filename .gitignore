@@ -1,0 +1,27 @@
+# Virtual environments
+.venv/
+env/
+__pycache__/
+
+# Rasa Models (these can be regenerated)
+models/
+
+# Logs
+*.log
+
+# Cache
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+.cache/
+
+# VSCode
+.vscode/
+
+# Python egg info
+*.egg-info/
+
+# System files
+.DS_Store
+
