@@ -2,6 +2,7 @@
 .venv/
 env/
 __pycache__/
+rasa-env/
 
 # Rasa Models (these can be regenerated)
 models/
@@ -25,3 +26,10 @@ __pycache__/
 # System files
 .DS_Store
 
+#Python 
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv
+rasa-env/
