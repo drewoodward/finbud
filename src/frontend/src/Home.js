@@ -1,105 +1,147 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react';
 import './Home.css';
 
 const Home = () => {
-  const [transactions, setTransactions] = useState([]);
-  const [goals, setGoals] = useState([
-    { id: 1, name: "Save for a Car", progress: 60, target: "$10,000", saved: "$6,000" },
-    { id: 2, name: "Emergency Fund", progress: 30, target: "$5,000", saved: "$1,500" }
-  ]);
-  const [categorizedSpending, setCategorizedSpending] = useState({
-    Food: 150,
-    Shopping: 200,
-    Bills: 500,
-    Entertainment: 75,
-    Other: 100
-  });
-  const [widgets, setWidgets] = useState([
-    "accountOverview",
-    "recentTransactions",
-    "spendingHeatmap",
-    "billReminders"
-  ]);
+  const [balance, setBalance] = useState('');
+  const [income, setIncome] = useState('');
+  const [expenses, setExpenses] = useState('');
 
-  useEffect(() => {
-    // Fetch transactions (replace with API call later)
-    const dummyTransactions = [
-      { id: 1, type: "expense", amount: "$20", category: "Food", date: "Apr 1" },
-      { id: 2, type: "income", amount: "$2000", category: "Salary", date: "Mar 30" },
-      { id: 3, type: "expense", amount: "$50", category: "Shopping", date: "Mar 28" },
-    ];
-    setTransactions(dummyTransactions);
-  }, []);
+  const [transactions, setTransactions] = useState([]);
+  const [newTransaction, setNewTransaction] = useState({
+    type: 'expense',
+    amount: '',
+    category: '',
+    date: '',
+  });
+
+  const [spending, setSpending] = useState([]);
+  const [newSpending, setNewSpending] = useState({ category: '', amount: '' });
+
+  const [goals, setGoals] = useState([]);
+  const [newGoal, setNewGoal] = useState({
+    name: '',
+    target: '',
+    saved: '',
+  });
+
+  const [bills, setBills] = useState([]);
+  const [newBill, setNewBill] = useState({ name: '', dueDate: '' });
+
+  const handleTransactionSubmit = () => {
+    if (newTransaction.amount && newTransaction.category && newTransaction.date) {
+      setTransactions([...transactions, { ...newTransaction, id: Date.now() }]);
+      setNewTransaction({ type: 'expense', amount: '', category: '', date: '' });
+    }
+  };
+
+  const handleSpendingSubmit = () => {
+    if (newSpending.category && newSpending.amount) {
+      setSpending([...spending, { ...newSpending, id: Date.now() }]);
+      setNewSpending({ category: '', amount: '' });
+    }
+  };
+
+  const handleGoalSubmit = () => {
+    if (newGoal.name && newGoal.target && newGoal.saved) {
+      setGoals([...goals, { ...newGoal, id: Date.now() }]);
+      setNewGoal({ name: '', target: '', saved: '' });
+    }
+  };
+
+  const handleBillSubmit = () => {
+    if (newBill.name && newBill.dueDate) {
+      setBills([...bills, { ...newBill, id: Date.now() }]);
+      setNewBill({ name: '', dueDate: '' });
+    }
+  };
 
   return (
     <div className="home-container">
-      {/* Account Overview */}
-      {widgets.includes("accountOverview") && (
-        <section className="account-overview">
-          <h2>Account Overview</h2>
-          <p>Balance: $5,200</p>
-          <p>Total Income: $10,000</p>
-          <p>Total Expenses: $4,800</p>
-        </section>
-      )}
+      <h1>FinBud Dashboard</h1>
 
-      {/* Categorized Spending */}
-      <section className="categorized-spending">
+      <section className="section">
+        <h2>Account Overview</h2>
+        <div className="input-group">
+          <input type="number" placeholder="Enter Balance" value={balance} onChange={(e) => setBalance(e.target.value)} />
+          <input type="number" placeholder="Total Income" value={income} onChange={(e) => setIncome(e.target.value)} />
+          <input type="number" placeholder="Total Expenses" value={expenses} onChange={(e) => setExpenses(e.target.value)} />
+        </div>
+        <p>Balance: ${balance || 0}</p>
+        <p>Total Income: ${income || 0}</p>
+        <p>Total Expenses: ${expenses || 0}</p>
+      </section>
+
+      <section className="section">
+        <h2>Add Transaction</h2>
+        <div className="input-group">
+          <select value={newTransaction.type} onChange={(e) => setNewTransaction({ ...newTransaction, type: e.target.value })}>
+            <option value="expense">Expense</option>
+            <option value="income">Income</option>
+          </select>
+          <input type="number" placeholder="Amount" value={newTransaction.amount} onChange={(e) => setNewTransaction({ ...newTransaction, amount: e.target.value })} />
+          <input type="text" placeholder="Category" value={newTransaction.category} onChange={(e) => setNewTransaction({ ...newTransaction, category: e.target.value })} />
+          <input type="date" value={newTransaction.date} onChange={(e) => setNewTransaction({ ...newTransaction, date: e.target.value })} />
+          <button onClick={handleTransactionSubmit}>Add Transaction</button>
+        </div>
+      </section>
+
+      <section className="section">
         <h2>Spending Breakdown</h2>
+        <div className="input-group">
+          <input type="text" placeholder="Category" value={newSpending.category} onChange={(e) => setNewSpending({ ...newSpending, category: e.target.value })} />
+          <input type="number" placeholder="Amount" value={newSpending.amount} onChange={(e) => setNewSpending({ ...newSpending, amount: e.target.value })} />
+          <button onClick={handleSpendingSubmit}>Add Spending</button>
+        </div>
         <ul>
-          {Object.entries(categorizedSpending).map(([category, amount]) => (
-            <li key={category}>
-              {category}: ${amount}
+          {spending.map((item) => (
+            <li key={item.id}>{item.category}: ${item.amount}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="section">
+        <h2>Financial Goals</h2>
+        <div className="input-group">
+          <input type="text" placeholder="Goal Name" value={newGoal.name} onChange={(e) => setNewGoal({ ...newGoal, name: e.target.value })} />
+          <input type="number" placeholder="Target Amount" value={newGoal.target} onChange={(e) => setNewGoal({ ...newGoal, target: e.target.value })} />
+          <input type="number" placeholder="Amount Saved" value={newGoal.saved} onChange={(e) => setNewGoal({ ...newGoal, saved: e.target.value })} />
+          <button onClick={handleGoalSubmit}>Add Goal</button>
+        </div>
+        <ul>
+          {goals.map((goal) => (
+            <li key={goal.id}>
+              {goal.name}: ${goal.saved} / ${goal.target}
             </li>
           ))}
         </ul>
       </section>
 
-      {/* Goals & Progress */}
-      <section className="goals-progress">
-        <h2>Financial Goals</h2>
-        {goals.map((goal) => (
-          <div key={goal.id} className="goal">
-            <p>{goal.name} ({goal.saved} / {goal.target})</p>
-            <div className="progress-bar">
-              <div className="progress" style={{ width: `${goal.progress}%` }}></div>
-            </div>
-          </div>
-        ))}
+      <section className="section">
+        <h2>Recent Transactions</h2>
+        <ul>
+          {transactions.map((tx) => (
+            <li key={tx.id}>
+              {tx.date} - {tx.category}: ${tx.amount} ({tx.type})
+            </li>
+          ))}
+        </ul>
       </section>
 
-      {/* Recent Transactions */}
-      {widgets.includes("recentTransactions") && (
-        <section className="recent-transactions">
-          <h2>Recent Transactions</h2>
-          <ul>
-            {transactions.map((tx) => (
-              <li key={tx.id} className={tx.type}>
-                {tx.date} - {tx.category}: {tx.amount}
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {/* Spending Heatmap Placeholder */}
-      {widgets.includes("spendingHeatmap") && (
-        <section className="spending-heatmap">
-          <h2>Spending Heatmap</h2>
-          <p>[Graph Placeholder]</p>
-        </section>
-      )}
-
-      {/* Upcoming Bills */}
-      {widgets.includes("billReminders") && (
-        <section className="bill-reminders">
-          <h2>Upcoming Bills</h2>
-          <ul>
-            <li>Rent - Due Apr 5</li>
-            <li>Electricity - Due Apr 10</li>
-          </ul>
-        </section>
-      )}
+      <section className="section">
+        <h2>Upcoming Bills</h2>
+        <div className="input-group">
+          <input type="text" placeholder="Bill Name" value={newBill.name} onChange={(e) => setNewBill({ ...newBill, name: e.target.value })} />
+          <input type="date" value={newBill.dueDate} onChange={(e) => setNewBill({ ...newBill, dueDate: e.target.value })} />
+          <button onClick={handleBillSubmit}>Add Bill</button>
+        </div>
+        <ul>
+          {bills.map((bill) => (
+            <li key={bill.id}>
+              {bill.name} - Due {bill.dueDate}
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 };
