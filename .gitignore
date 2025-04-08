@@ -2,7 +2,10 @@
 .venv/
 env/
 __pycache__/
+<<<<<<< HEAD
 rasa-env/
+=======
+>>>>>>> bd5c1c67 (Initial working Rasa chatbot)
 
 # Rasa Models (these can be regenerated)
 models/
@@ -11,8 +14,11 @@ models/
 *.log
 
 # Cache
+<<<<<<< HEAD
 *.dylib
 *.so
+=======
+>>>>>>> bd5c1c67 (Initial working Rasa chatbot)
 *.pyc
 *.pyo
 *.pyd
@@ -28,6 +34,7 @@ __pycache__/
 # System files
 .DS_Store
 
+<<<<<<< HEAD
 #Python 
 __pycache__/
 *.py[cod]
@@ -35,3 +42,5 @@ __pycache__/
 .env
 .venv
 rasa-env/
+=======
+>>>>>>> bd5c1c67 (Initial working Rasa chatbot)
