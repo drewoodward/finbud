@@ -11,6 +11,8 @@ models/
 *.log
 
 # Cache
+*.dylib
+*.so
 *.pyc
 *.pyo
 *.pyd
