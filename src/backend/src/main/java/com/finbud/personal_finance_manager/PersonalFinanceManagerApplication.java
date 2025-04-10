@@ -9,5 +9,5 @@ public class PersonalFinanceManagerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PersonalFinanceManagerApplication.class, args);
 	}
-
+	public String hello() { return "Hello World!"; }
 }
