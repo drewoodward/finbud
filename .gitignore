@@ -1,11 +1,16 @@
 # Virtual environments
 .venv/
 env/
-__pycache__/
-<<<<<<< HEAD
 rasa-env/
-=======
->>>>>>> bd5c1c67 (Initial working Rasa chatbot)
+.env
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.cache/
 
 # Rasa Models (these can be regenerated)
 models/
@@ -13,19 +18,11 @@ models/
 # Logs
 *.log
 
-# Cache
-<<<<<<< HEAD
-*.dylib
+# Compiled libraries
 *.so
-=======
->>>>>>> bd5c1c67 (Initial working Rasa chatbot)
-*.pyc
-*.pyo
-*.pyd
-__pycache__/
-.cache/
+*.dylib
 
-# VSCode
+# VSCode settings
 .vscode/
 
 # Python egg info
@@ -34,14 +31,4 @@ __pycache__/
 # System files
 .DS_Store
 
-<<<<<<< HEAD
-#Python 
-__pycache__/
-*.py[cod]
-*.egg-info/
-.env
-.venv
-rasa-env/
-=======
->>>>>>> bd5c1c67 (Initial working Rasa chatbot)
-rasa-env/
+/src/backend/src/main/resources/application.properties
