@@ -31,4 +31,4 @@ models/
 # System files
 .DS_Store
 
-/src/backend/src/main/resources/application.properties
+application.properties
