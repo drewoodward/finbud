@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Home.css';
+import './../styles/Home.css';
 
 const Home = () => {
   const [balance, setBalance] = useState('');

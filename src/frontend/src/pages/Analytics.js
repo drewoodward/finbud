@@ -1,6 +1,6 @@
 // Analytics.js
 import React from 'react';
-import './analytics.css'; // Import the styles
+import './../styles/analytics.css'; // Import the styles
 
 function Analytics() {
   return (
