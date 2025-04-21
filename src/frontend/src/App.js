@@ -1,13 +1,13 @@
-import './App.css';
+import './styles/App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 // Import your components
-import Home from './Home';
-import About from './About';
-import Analytics from './Analytics';
-import Profile from './Profile';
-import Chatbot from './Chatbot'; // Import Chatbot
+import Home from './pages/Home';
+import About from './pages/About';
+import Analytics from './pages/Analytics';
+import Profile from './pages/Profile';
+import Chatbot from './components/Chatbot/Chatbot'; // Import Chatbot
 
 function App() {
   return (

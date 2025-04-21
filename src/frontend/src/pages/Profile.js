@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./profile.css";
+import "./../styles/profile.css";
 
 const Profile = () => {
   const [darkMode, setDarkMode] = useState(false);
