@@ -12,8 +12,15 @@ __pycache__/
 *.pyd
 .cache/
 
-# Rasa Models (these can be regenerated)
+# Ignore Rasa models (can be regenerated)
 models/
+
+# Ignore training and test data files inside rasabackend
+rasabackend/data/
+rasabackend/test/
+
+# Ignore all .yml config files in rasabackend (only if you want this!)
+rasabackend/*.yml
 
 # Logs
 *.log
