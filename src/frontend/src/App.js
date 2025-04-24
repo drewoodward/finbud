@@ -19,7 +19,7 @@ function App() {
 
         {/* Navigation using Link for client-side routing */}
         <nav>
-          <Link to="/">Home</Link>
+          <Link to="/">Home</Link>    {/*default landing page*/}
           <Link to="/about">About</Link>
           <Link to="/analytics">Analytics</Link> {/* Lowercase for consistency */}
           <Link to="/profile">Profile</Link>
