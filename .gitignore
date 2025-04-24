@@ -3,7 +3,7 @@
 env/
 rasa-env/
 .env
-
+venv/
 # Python bytecode and cache
 __pycache__/
 *.py[cod]
